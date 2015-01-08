@@ -1,0 +1,25 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+```html
+<i class="icon-home"></i>
+```
+*/
+.icon-cancel {
+  background-image: url(spritesheet.png);
+  background-position: 0px 0px;
+  width: 10px;
+  height: 10px;
+}
+.icon-pause {
+  background-image: url(spritesheet.png);
+  background-position: -10px 0px;
+  width: 8px;
+  height: 10px;
+}
+.icon-resume {
+  background-image: url(spritesheet.png);
+  background-position: -18px 0px;
+  width: 8px;
+  height: 10px;
+}

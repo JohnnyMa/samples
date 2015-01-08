@@ -1,5 +1,8 @@
 .classpath
 .project
+/node_modules
+/.settings
+/target
 node_modules/*
 .settings/*
-/.settings
+target/*
