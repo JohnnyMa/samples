@@ -1,7 +1,14 @@
 <?php
 /**
- * Util @jma
+ * Util:
  * Push articles from evernote to kindle 
+ * version: 0.0.1
+ * copyright @jma 2015
+ *
+ * TODO:
+ * 1. support sending all articles of evernote without any filter (version: 0.0.1)
+ * 2. support filter by datetime, to send filtered articles (version: 0.0.2)
+ *
  */
 
 //configurations
