@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>try to render dust template synchronously</title>
+	<script src="jquery-1.11.3.js" type="text/javascript"></script>
+	<script src="dust-full.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <h1>test result:</h2>
+	<section id="result"></section>
+  </body>
+  <script>
+var tpl = dust.compile("Omg {#people} {.} {/people} are here! {>partial/}", "tpl");
+var partial = dust.compile("I'm a partial but I've already been included so things actually run {how}", "partial");
+
+dust.loadSource(tpl);
+dust.loadSource(partial);
+
+var data = {
+        people: ["jim", "jane", "jack", "julie"],
+        how: "SYNCHRONOUSLY!"
+    };
+
+var result;
+dust.render("tpl", data, function(err, res) {
+    result = res;
+	console.log("1" + Date.now());
+});
+
+console.log("2" + Date.now());
+
+$("#result").text(result);
+
+console.log("3" + Date.now());
+console.log(result);
+console.log("4" + Date.now());
+
+  
+  
+/*
+    function templates(template) {
+	  return function templatesWrapper(data) {
+		var result;
+		dust.render(template, data, function onRender(err, data) {
+		  if (err) {
+			throw err;
+		  }
+		  result = data;
+		});
+		return result;
+	  }
+	}
+
+	var renderHello = templates('hello.dust');
+	renderHello({ username: 'jma' });
+*/
+  </script>
+</html>
