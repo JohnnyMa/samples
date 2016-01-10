@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>Demo</title>
+    <script type="text/javascript" src="browserfs.min.js"></script>
+	<script type='text/javascript' src='bundle.js'></script>
+</head>
+<body>
+aaa
+<div id="result" >result</div>
+<script>
+/*
+// Installs globals onto window:
+  // * Buffer
+  // * require (monkey-patches if already defined)
+  // * process
+  // You can pass in an arbitrary object if you do not wish to pollute
+  // the global namespace.
+  BrowserFS.install(window);
+  // Constructs an instance of the LocalStorage-backed file system.
+  var lsfs = new BrowserFS.FileSystem.LocalStorage();
+  // Initialize it as the root file system.
+  BrowserFS.initialize(lsfs);
+
+
+function test(path) {
+	var getOVF = require("getOvfContentFromOva");
+	getOVF(path, function(content) {
+		console.log('.ovf content.....');
+		console.log(content);
+		var elem = document.getElementById('result');
+		elem.textContent = content;
+	});
+}
+
+var path = 'centos6.6postgresql1.ova';
+
+console.log('----------===========' + path);
+test(path);
+console.log('----------===========');
+*/
+</script>
+</body>
+</html>
+

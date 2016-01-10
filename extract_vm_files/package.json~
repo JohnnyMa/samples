@@ -1,0 +1,121 @@
+
+
+(No Subject)
+[Draft‏] Johnny 馬   5:51 PM  
+To: 馬Johnny
+
+Continue writing
+|
+Delete
+http://grokbase.com/t/gg/nodejs/125pdds940/porting-fs-to-the-browser-via-browserify
+
+
+http://grokbase.com/t/gg/nodejs/125pdds940/porting-fs-to-the-browser-via-browserify
+Actions  
+Johnny 馬   4:42 PM   Keep this message at the top of your inbox  
+To: 馬Johnny
+
+module.exports = function getOvfContentFromOva(path, callback) {
+/*
+var browserify = require('browserify');
+var b = browserify('example/main.js');
+b.transform('brfs');
+
+b.bundle().pipe(fs.createWriteStream('bundle.js'));
+*/
+
+	var tar = require('tar-fs');
+	//var fs = require('fs');
+	var fs = require('browserify-fs');
+	var extract = tar.extract('./extract_folder');
+	var result = '111test';
+
+	extract.on('entry', function(header, stream, next) {
+	  // read .ovf file only
+	  if (header.name.indexOf('.ovf', header.name.length - '.ovf'.length) === -1) {
+		  return false;
+	  }
+	  
+	  stream.on('data', function(chunk) {
+		//console.log('got %d bytes of data', chunk.length);
+		if (0 === chunk.length) {
+		  console.error('There is no content in the .ovf file.');
+		} else {
+			result = chunk.toString();
+			callback(chunk.toString());
+		}
+		console.log(chunk.toString());
+	  });
+	  stream.resume() // just auto drain the stream
+	});
+
+	extract.on('finish', function() {
+	  // all entries read
+	  console.log('extract process is finished.');
+	});
+
+	console.log('fs-----');
+	
+	fs.createReadStream(path).pipe(extract);
+	
+	/*
+	var file_exists = false;
+	fs.exists(path, function (exists) {
+	  file_exists = exists;
+	  console.log(exists ? "it's there" : 'no passwd!');
+	})
+
+    if (file_exists){
+		fs.createReadStream(path).pipe(extract);
+	} else {
+		console.log('file does not exist in: ' + path);
+	}
+	*/
+}
+
+------------------ getOvfContentFromOva.js ---------
+
+
+
+
+
+
+
+console.log('----------');
+function test(path) {
+	var getOVF = require("./getOvfContentFromOva.js");
+	getOVF(path, function(content) {
+		console.log('.ovf content.....');
+		console.log(content);
+		//var elem = document.getElementById('result');
+		//elem.textContent = content;
+	});
+}
+
+var path = 'D:/wamp/www/jtest/tar_fs/centos6.6postgresql1.ova';
+//var path = 'D:/wamp/www/jtest/tar_fs/package.json';
+
+console.log('----------===========' + path);
+test(path);
+console.log('----------===========');
+
+------------------ test.js ---------
+
+
+
+
+{
+  "name": "test_ovf",
+  "version": "0.0.1",
+  "description": "get the content of .ovf from a .ova file",
+  "dependencies": {
+    "tar-fs": "^1.8.1",
+    "browserify-fs": "^1.0.0"
+  },
+  "keywords": [
+    "ova",
+    "ovf"
+  ],
+  "author": "test",
+  "license": "..."
+}
