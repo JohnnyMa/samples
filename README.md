@@ -13,4 +13,8 @@ HTML5文件分块上传（主要用于大文件的上传）
 
 ### util/kindler_pusher
 
-send articles from evernote to kindle
+send evernotes to kindle
+
+### es2015
+
+sample codes of es2015
