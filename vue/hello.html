@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Vue.js tree-view demo</title>
+    <script src="vue.js"></script>
+  </head>
+  <body>
+
+    <div id="app">
+	  {{ message }}
+	  <input v-model="test">
+	  {{ message2 }} {{test}}
+	</div>
+
+	<div id="input-field">
+		<input v-model="message2"> this field won't be changed when refresh the whole page.
+	</div>
+
+
+	<div id="app-list">
+	  <ul>
+	    <li v-for="todo in todos">
+	      {{ todo.text }}
+	    </li>
+	  </ul>
+	</div>
+
+
+	<div id="app-user-input">
+	  <p>{{ message }}</p>
+	  <button v-on:click="reverseMessage">Reverse Message</button>
+	</div>
+
+
+	<div id="app-full">
+	  <input v-model="newTodo" v-on:keyup.enter="addTodo">
+	  <ul>
+	    <li v-for="todo in todos">
+	      <span>{{ todo.text }}</span>
+	      <button v-on:click="removeTodo($index)">X</button>
+	    </li>
+	  </ul>
+	</div>
+
+    <!-- demo code -->
+    <script src="hello.js"></script>
+  </body>
+</html>
