@@ -52,3 +52,20 @@ new Vue({
     }
   }
 })
+
+
+
+// this is our Model
+var exampleData = {
+  name: 'Vuellll'
+}
+// create a Vue instance, or, a "ViewModel"
+// which links the View and the Model
+var exampleVM = new Vue({
+  el: '#example-1',
+  data: exampleData,
+  created: function () {
+    // `this` points to the vm instance
+    console.log('a is: ' + this.name)
+  }
+})
