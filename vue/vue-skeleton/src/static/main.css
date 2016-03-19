@@ -1,0 +1,19 @@
+.container {
+  overflow: hidden;
+}
+
+.nav {
+  float: left;
+}
+
+.nav a {
+  display: block;
+}
+
+.content {
+  margin-left: 100px;
+}
+
+.v-link-active {
+  color: red;
+}
