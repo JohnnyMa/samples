@@ -112,3 +112,19 @@ function curry(fn, scope) {
     fn.apply(scope, args);
   };
 }
+
+
+
+var curry = function (x) {
+	return function (y) {
+		return x + y;
+	}
+}
+
+var addOne = curry(1);
+var addFive = curry(5);
+
+addOne(6);//7
+addFive(6);//11
+
+curry(1)(1)//2
