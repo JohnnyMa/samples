@@ -1,5 +1,5 @@
 export default class Hello {  
     world() {
-        alert('Hello ES6');
+        console.log('Hello ES6');
     }
 }

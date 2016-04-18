@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/index.js"],"names":[],"mappings":";;;AAAA,YAAQ,MAAR,CAAe;AACX,iBAAS,OAAT;KADJ;;AAIA,YAAQ,CAAC,MAAD,CAAR,EAAkB,UAAS,IAAT,EAAe;AAC7B,YAAI,KAAK,OAAL,EAAJ,CAD6B;KAAf,CAAlB","file":"index.js","sourcesContent":["require.config({  \n    baseUrl: 'dist/'\n});\n\nrequire(['main'], function(main) {  \n    new main.default();\n});"]}

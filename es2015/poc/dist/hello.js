@@ -37,7 +37,7 @@ define(['exports'], function (exports) {
         _createClass(Hello, [{
             key: 'world',
             value: function world() {
-                alert('Hello ES6');
+                console.log('Hello ES6');
             }
         }]);
 

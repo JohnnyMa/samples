@@ -12,6 +12,6 @@
     "grunt": "^1.0.1",
     "grunt-babel": "^6.0.0"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "jma",
+  "license": "MIT"
 }
