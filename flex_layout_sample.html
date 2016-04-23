@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>flex layout sample</title>
+	<style type="text/css">
+	.container {
+		1width: 1000px;
+		height: 500px;
+		border: 1px solid blue;
+		margin: 20px;
+		padding: 10px;
+		display: flex;
+		justify-content: space-between;
+		flex-flow: row wrap;
+	}
+	.item {
+		height: 150px;
+		width: 10%;
+		border: 1px solid red;
+		text-align: center;
+		line-height: 150px;
+	}
+	.item.child1 {
+		width: 20%;
+	}
+	.item.child2 {
+		height: 220px;
+		line-height: 220px;
+		order: 20;
+	}
+	.item.child3 {
+		width: 40%;
+		height: 200px
+		line-height: 100px;
+	}
+	.item.child5 {
+		width: 5%;
+		height: 150px;
+		line-height: 150px;
+		align-self: center;
+		order: -2;
+	}
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<section class="item child1">1</section>
+		<section class="item child2">2</section>
+		<section class="item child3">3</section>
+		<section class="item child4">4</section>
+		<section class="item child5">5</section>
+		<section class="item child6">6</section>
+	</div>
+</body>
+</html>
