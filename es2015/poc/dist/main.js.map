@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/main.js"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;QAEqB,OACjB,SADiB,IACjB,GAAc;8BADG,MACH;;AACV,YAAI,QAAQ,qBAAR,CADM;AAEV,cAAM,KAAN,GAFU;KAAd;;sBADiB","file":"main.js","sourcesContent":["import Hello from 'hello';\n\nexport default class Main {  \n    constructor() {\n        let hello = new Hello();\n        hello.world();\n    }\n}"]}
