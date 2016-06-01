@@ -128,3 +128,8 @@ addOne(6);//7
 addFive(6);//11
 
 curry(1)(1)//2
+
+//clone obj
+function clone (obj) {
+    return JSON.parse(JSON.stringify(obj))
+}
