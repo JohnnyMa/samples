@@ -11,11 +11,12 @@
 	</head>
 	<body>
 		<h1>test result:</h2>
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open modal for @mdo</button>
 	<section id="result"></section>
 </body>
 <script>
-	var tpl_string = '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open modal for @mdo</button>' +
-	'<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">' +
+/*
+	var tpl_string = '<div class="modal fade in" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">' +
 		'<div class="modal-dialog" role="document">' +
 			'<div class="modal-content">' +
 				'<div class="modal-header">' +
@@ -42,6 +43,24 @@
 		'</div>' +
 	'</div>';
 
+*/
+
+	var tpl_string = '<div class="modal fade in" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="111" aria-hidden="true">' +
+    '<div class="modal-header">' +
+        '<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i></button>' +
+        '<h3 id="111">qqqq</h3>' +
+    '</div>' +
+    '<div class="modal-body">' +
+            '<form class="pull-left" onsubmit="return false;">' +
+                '<div class="stms-form-error"></div>' +
+                '<input type="text" class="form-control" id="recipient-name">' +
+                '<input type="text" class="form-control" id="recipient-namea">' +
+            '</form>' +
+    '</div>' +
+    '<div class="modal-footer">' +
+        '<button class="btn" data-dismiss="modal" aria-hidden="true">cancel</button>' +
+    '</div>' +
+'</div>';
 
 	var tpl = dust.compile(tpl_string, "tpl");
 	dust.loadSource(tpl);
@@ -54,17 +73,20 @@
 		result = res;
 		console.log("1" + Date.now());
 		console.log(result);
-		$("#result").html(result);
+		// $("#result").html(result);
+		$('body').append(result);
 
-		$('#exampleModal').on('show.bs.modal', function (event) {
-		var button = $(event.relatedTarget); // Button that triggered the modal
-		var recipient = button.data('whatever'); // Extract info from data-* attributes
-		// If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-		// Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-		var modal = $(this);
-		modal.find('.modal-title').text('New message to ' + recipient);
-		modal.find('.modal-body input').val(recipient);
-		})
+		$('#exampleModal').modal();		
+
+		// $('#exampleModal').on('show.bs.modal', function (event) {
+		// 	var button = $(event.relatedTarget); // Button that triggered the modal
+		// 	var recipient = button.data('whatever'); // Extract info from data-* attributes
+		// 	// If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+		// 	// Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+		// 	var modal = $(this);
+		// 	modal.find('.modal-title').text('New message to ' + recipient);
+		// 	modal.find('.modal-body input').val(recipient);
+		// })
 	});
 </script>
 </html>
