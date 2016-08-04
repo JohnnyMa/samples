@@ -1,0 +1,43 @@
+{
+  "name": "d3-statistics",
+  "version": "0.0.1",
+  "description": "Statistics Chart based on d3.js",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --inline --hot",
+    "lint": "eslint  --ext .js src/",
+    "build": "webpack --config ./webpack.config.production.js --progress --hide-modules",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Chart",
+    "d3.js",
+    "Statistics"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "d3": "^3.5.17"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.6",
+    "babel-core": "^6.9.0",
+    "babel-eslint": "^6.0.4",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-runtime": "^6.0.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-runtime": "^6.6.1",
+    "css-loader": "^0.23.1",
+    "css-to-string-loader": "^0.1.1",
+    "dsv-loader": "^1.0.3",
+    "eslint": "^2.10.2",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-loader": "^1.3.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "html-webpack-plugin": "^2.17.0",
+    "json-loader": "^0.5.4",
+    "postcss-loader": "^0.9.1",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  }
+}

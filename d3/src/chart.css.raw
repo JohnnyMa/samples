@@ -1,0 +1,42 @@
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+text.tips-text {
+  pointer-events: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.ruler .line {
+  stroke-width: 1px;
+  stroke-dasharray: 3.94529, 2.7617;
+  stroke-opacity: 0.5;
+  stroke: #000;
+}
+
+rect.interactive-panel {
+  fill: none;
+  pointer-events: all;
+}
+
+.ruler.vertical {
+  cursor: ew-resize;
+}
+
+.ruler.horizontal {
+  cursor: ns-resize;
+}
